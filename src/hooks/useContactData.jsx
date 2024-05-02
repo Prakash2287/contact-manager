@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from "react";
 
 function useContactData() {
   const [contacts, setContacts] = useState([]);
@@ -8,9 +8,11 @@ function useContactData() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/all-contacts');
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/all-contacts`
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch contacts');
+          throw new Error("Failed to fetch contacts");
         }
         const data = await response.json();
         setContacts(data.allRecords);
@@ -24,7 +26,7 @@ function useContactData() {
     fetchContacts();
   }, []);
   const memoizedContacts = useMemo(() => contacts, [contacts]);
-  return { contacts:memoizedContacts, isLoading, error };
+  return { contacts: memoizedContacts, isLoading, error };
 }
 
 export default useContactData;

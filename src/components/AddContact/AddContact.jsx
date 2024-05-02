@@ -24,18 +24,21 @@ const AddContact = () => {
     let submitButton = document.querySelector(".add-contact-button");
     submitButton.innerText = "Please Wait...";
     try {
-      const data = await fetch("http://localhost:3000/add-contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const data = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/add-contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const res = await data.json();
     } catch (error) {
       setSubmitError(true);
       setTimeout(() => {
-        setSubmitError(false)
+        setSubmitError(false);
       }, 3000);
     } finally {
       submitButton.innerText = "Submit";
@@ -44,9 +47,11 @@ const AddContact = () => {
 
   return (
     <div className="add-contact-form-wrapper">
-    {
-      submitError ? <h4 style={{color:'red',width:'100vw',textAlign:'center'}}>Something Went Wrong.Try Later.</h4> : null
-    }
+      {submitError ? (
+        <h4 style={{ color: "red", width: "100vw", textAlign: "center" }}>
+          Something Went Wrong.Try Later.
+        </h4>
+      ) : null}
       <div className="add-contact-form">
         <h2>Add Contact Details</h2>
         <div>
