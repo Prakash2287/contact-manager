@@ -10,7 +10,6 @@ const ContactWithFilter = () => {
     dateOfBilling:''
   }
   const [targetFilterState,setTargetFilterState]=useState(filterObject);
-  console.log(targetFilterState);
   return (
     <div style={{display:'flex',flexDirection:'column',gap:'2rem'}}>
         <Navigation />

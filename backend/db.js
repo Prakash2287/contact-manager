@@ -13,7 +13,6 @@ const client = new MongoClient(uri, {
 
 async function run() {
   await client.connect();
-  console.log('CLient connected');
   return client;
 }
 module.exports=run;

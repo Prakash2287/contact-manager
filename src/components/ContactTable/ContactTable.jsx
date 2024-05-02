@@ -25,7 +25,6 @@ function getFilteredContacts(contacts,targetFilterState){
   return Array.isArray(filteredData)?filteredData:[filteredData]
 }
 const ContactTable = ({targetFilterState}) => {
-  console.log(targetFilterState);
   const { contacts, error, isLoading } = useContactData();
   let filteredContacts=getFilteredContacts(contacts,targetFilterState);
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,7 +37,6 @@ const ContactTable = ({targetFilterState}) => {
     if (currentPage + amount > totalPages || currentPage + amount < 1) return;
     setCurrentPage((prevPage) => prevPage + amount);
   };
-  console.log(indexOfFirstItem, indexOfLastItem);
   const currentItems = filteredContacts?.slice(indexOfFirstItem, indexOfLastItem);
   if (isLoading) {
     return (
