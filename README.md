@@ -1,4 +1,4 @@
-# Con
+# Contact Manager
 # React + Vite
 
 ## [Deployed Project](https://contact-manager-tan.vercel.app/)
