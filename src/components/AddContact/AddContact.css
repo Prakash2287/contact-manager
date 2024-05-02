@@ -1,0 +1,32 @@
+.add-contact-button{
+    background-color: aliceblue;
+    transition: all 200ms linear;
+}
+.add-contact-button:hover{
+    box-shadow: inset 0 0 3px black;
+}
+.add-contact-form-wrapper{
+    width: 100vw;
+}
+.add-contact-form{
+    width: 800px;
+    margin-inline:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.add-contact-input-form{
+    width: 20rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.date-of-billing-input{
+    cursor: pointer;
+}
+.date-of-billing-group{
+    display: flex;flex-direction: column;
+}

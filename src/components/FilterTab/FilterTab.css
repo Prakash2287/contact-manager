@@ -1,0 +1,23 @@
+.filter-tab-wrapper{
+    width: 100vw;
+    display: flex;
+}
+.filter-tab{
+    margin-inline:auto ;
+    display: flex;
+    gap: 1rem;
+}
+.submit-button{
+    background-color: aliceblue;
+    transition: all 200ms linear;
+}
+.submit-button:hover{
+    box-shadow: inset 0 0 3px black;
+}
+.filter-input-field{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+input::placeholder{
+    font-family: cursive;
+}
